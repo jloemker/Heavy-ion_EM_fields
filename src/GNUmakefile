@@ -11,8 +11,9 @@
 ##  
 
 CC := g++-mp-6
+#CC := g++ 
 CFLAGS= -O3 -Wall -fopenmp
-
+#CFLAGS= -O3 -Wall -fopenmp $(shell gsl-config --cflags) -lz -std=c++11
 RM		=	rm -f
 O               =       .o
 LDFLAGS         =       $(CFLAGS)
@@ -28,7 +29,7 @@ SRC		=	main.cpp ParameterReader.cpp \
 			EM_fields.cpp gauss_quadrature.cpp
 
 INC		= 	EM_fields.h Stopwatch.h ParameterReader.h \
-            parameter.h gauss_quadrature.h
+			parameter.h gauss_quadrature.h
 
 # -------------------------------------------------
 
